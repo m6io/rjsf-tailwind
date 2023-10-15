@@ -26,9 +26,10 @@ export default function IconButton<
   } = props
   const buttonClass = iconType === "block" ? "w-full" : ""
   const variantClass =
+    // @ts-expect-error incomplete type from rjsf
     props.variant === "danger"
       ? "bg-red-500 hover:bg-red-700 text-white"
-      : props.disabled
+      : disabled
       ? "bg-gray-100 text-gray-300"
       : "bg-gray-200 hover:bg-gray-500 text-gray-700"
 
@@ -105,6 +106,7 @@ export function RemoveButton<
     <IconButton
       title={translateString(TranslatableString.RemoveButton)}
       {...props}
+      // @ts-expect-error incomplete props from rjsf
       variant="danger"
       icon={<IoIosRemove />}
     />
