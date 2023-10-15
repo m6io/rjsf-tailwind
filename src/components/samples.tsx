@@ -1,12 +1,12 @@
 import { samples } from "@/samples"
-import { useStore } from "@/store"
+import { AppState, useStore } from "@/store"
 
-const selector = (state) => ({
+const selector = (state: AppState) => ({
   label: state.label,
   setLabel: state.setLabel,
 })
 
-function classNames(...classes) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ")
 }
 
